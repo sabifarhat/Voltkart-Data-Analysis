@@ -35,11 +35,13 @@ WHEN NOT MATCHED BY TARGET THEN
 OUTPUT $action, inserted.order_id, inserted.order_status, inserted.order_total
 ;
 
+
+
 -- Row count AFTER
 SELECT COUNT(*) AS rows_after FROM fact_orders;
 
 
-
+-- Verification Query
 -- Sample of updated rows: orders that came from the batch AND already existed
 SELECT TOP 10 b.order_id,
        b.order_status AS old_status, f.order_status AS new_status,
