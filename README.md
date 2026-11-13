@@ -1,5 +1,7 @@
 # Voltkart: Advanced SQL for Modern Data Engineering
 
+🎥 **[Video walkthrough](https://drive.google.com/file/d/1mBXIlbEfsyZMxC8ismiRvPOLprp2Dsb_/view?usp=sharing)**
+
 ## Problem Statement
 Voltkart is a fast-growing online electronics and appliances retailer in India that has scaled from a niche store to millions of orders. The nightly job still rebuilds reporting tables with full reloads, which has become slow and fragile.
 
