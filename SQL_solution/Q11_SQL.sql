@@ -18,7 +18,7 @@ WITH cust_cte AS (
              YEAR(order_date) * 12 + MONTH(order_date)                     -- several orders in a month count once
 ),
 
--- Label each run of consecutive months (gaps and islands)
+-- Label each run of consecutive months 
 island AS (
     SELECT *,
            month_num - ROW_NUMBER() OVER (
@@ -55,7 +55,7 @@ FROM fact_orders
 WHERE order_status = 'Completed';
 
 
-/* Approach: gaps-and-islands. Each active month becomes a number
+/* Approach: Each active month becomes a number
    (year * 12 + month). Subtracting ROW_NUMBER() gives the same value
    for consecutive months, so each streak can be grouped and counted.
    The longest streak per customer is the MAX of those counts.
